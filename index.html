@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#112d46" />
+  <title>PaySathi — Payments made for campus life</title>
+</head>
+<body>
+  <div class="app-shell">
+    <div class="phone">
+
+      <!-- ================= AUTH ================= -->
+      <section class="screen" id="welcome">
+        <div class="hero">
+          <div class="brand"><span class="wallet-mark" aria-hidden="true"></span> PaySathi</div>
+          <div class="eyebrow">PAYMENTS MADE FOR CAMPUS LIFE</div>
+          <h1>Your campus life.<br>Money made easy.</h1>
+          <p>Pay friends, split the mess bill, and recharge in seconds.</p>
+          <div class="campus-art" aria-hidden="true"><span></span><i></i><b></b></div>
+          <div class="hero-notifications">
+            <span><em>M</em><b>From Mom<strong>+ Rs. 500</strong></b></span>
+            <span><em>▱</em><b>Mess split<strong>3 of 4 friends paid</strong></b></span>
+          </div>
+          <span class="hero-orb"></span>
+        </div>
+        <div class="content welcome-panel">
+          <div class="segmented auth-mode" role="tablist" aria-label="Sign in method">
+            <button class="seg active" type="button" data-auth-mode="mobile">Mobile</button>
+            <button class="seg" type="button" data-auth-mode="email">Email</button>
+          </div>
+          <label for="welcomeMobile">Mobile number</label>
+          <input id="welcomeMobile" class="input" value="+977 98XXXXXXXXX" aria-label="Mobile number">
+          <button class="btn primary" data-go="signup">Get Started <span aria-hidden="true">→</span></button>
+          <div class="welcome-bottom">
+            <button class="link" data-go="forgot">Forgot Password?</button>
+            <button class="link create-account" data-go="signup">Create account</button>
+          </div>
+          <div class="security-pill"><span aria-hidden="true">♡</span> Protected by secure PIN + verified mobile</div>
+        </div>
+      </section>
+
+      <section class="screen hidden" id="receive-money">
+        <div class="content form-page receive-page">
+          <button class="back" data-go="home">‹</button>
+          <div class="receive-intro">
+            <span class="receive-icon">↓</span>
+            <div><h2>Receive Money</h2><p class="sub">Share your details and let money come to you.</p></div>
+          </div>
+          <div class="receive-card">
+            <div class="receive-avatar">AS</div>
+            <strong id="receiveName">Aarav Sharma</strong>
+            <span id="receiveContact">+977 9812345678</span>
+            <div class="qr-placeholder" aria-label="Personal payment QR code">
+              <span>▦</span>
+            </div>
+            <small>Scan this QR or share your PaySathi ID</small>
+            <b class="receive-id">PS-AARAV-4821</b>
+          </div>
+          <button class="btn primary" data-action="share-receive">Share Payment Details</button>
+          <button class="btn secondary" data-action="copy-receive">Copy PaySathi ID</button>
+          <div class="info">Your payment details are safe to share. Never share your PIN or OTP.</div>
+        </div>
+        <nav class="bottom-nav">
+          <button data-go="home">⌂<span>Home</span></button><button class="active" data-go="send-money">₹<span>Payments</span></button><button data-go="activity">◷<span>Activity</span></button><button data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+      <section class="screen hidden" id="signup">
+        <div class="content form-page">
+          <button class="back" data-go="welcome">‹</button>
+          <h2>Create your account</h2>
+          <p class="sub">Create your account in under a minute.</p>
+          <div class="step-indicator"><span>STEP 1 OF 4</span><i><b></b></i></div>
+
+          <div class="segmented compact auth-mode" role="tablist" aria-label="Account contact method">
+            <button class="seg active" type="button" data-auth-mode="mobile">Mobile</button>
+            <button class="seg" type="button" data-auth-mode="email">Email</button>
+          </div>
+
+          <label>Full Name</label>
+          <input id="fullName" class="input" value="Aarav Sharma" placeholder="Aarav Sharma">
+
+          <label id="mobileLabel">Mobile Number</label>
+          <input id="mobile" class="input" value="+977 9812345678" placeholder="+977 98XXXXXXXX">
+
+          <div id="emailField">
+            <label>Email Address</label>
+            <input id="email" class="input" value="name@example.com" placeholder="name@example.com" type="email">
+          </div>
+
+          <label>Create Password</label>
+          <div class="password-field">
+            <input id="password" class="input" type="password" value="password" placeholder="At least 8 characters">
+            <button class="eye" type="button" data-password data-action="toggle-password" aria-label="Show password">◉</button>
+          </div>
+          <small>Use at least 8 characters.</small>
+          <div class="password-strength" aria-live="polite"><i></i><span>Enter a password</span></div>
+          <label class="terms-check"><input id="terms" type="checkbox" checked> <span>I agree to the Terms of Service and Privacy Policy.</span></label>
+
+          <button class="btn primary" data-action="signup">Continue</button>
+          <p class="helper">Already have an account? <button class="link" data-go="welcome">Log In</button></p>
+          <div class="account-control">
+            <span class="control-icon">♢</span>
+            <div><strong>Your account, your control</strong><small>Verify your number, set a payment PIN, then connect a bank account.</small></div>
+            <b>NEXT · VERIFY YOUR MOBILE</b>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen hidden" id="otp">
+        <div class="content form-page">
+          <button class="back" data-go="signup">‹</button>
+          <div class="mini-brand">Pay<span>Sathi</span></div>
+          <h2 id="otpTitle">Verify your number</h2>
+          <p class="sub" id="otpSubtitle">A quick security check to protect your wallet.</p>
+          <div class="otp-illustration"><span>▯</span><b>✓</b></div>
+          <strong class="otp-sent">Code sent to&nbsp; +977 98••••••XX</strong>
+          <p class="otp-caption">Enter the six-digit verification code</p>
+          <div class="otp-row">
+            <input maxlength="1" inputmode="numeric" class="otp">
+            <input maxlength="1" inputmode="numeric" class="otp">
+            <input maxlength="1" inputmode="numeric" class="otp">
+            <input maxlength="1" inputmode="numeric" class="otp">
+            <input maxlength="1" inputmode="numeric" class="otp">
+            <input maxlength="1" inputmode="numeric" class="otp">
+          </div>
+          <div class="otp-meta"><span>Resend OTP in 00:30</span><button class="link" data-action="resend-otp">Resend OTP</button></div>
+          <button class="btn primary" data-action="verify">Verify &amp; continue <span>→</span></button>
+          <div class="info">Never share your OTP with anyone. It is used only to verify your identity.</div>
+          <div class="otp-keypad" aria-hidden="true">
+            <span data-otp-key="1">1</span><span data-otp-key="2">2</span><span data-otp-key="3">3</span><span data-otp-key="4">4</span><span data-otp-key="5">5</span><span data-otp-key="6">6</span><span data-otp-key="7">7</span><span data-otp-key="8">8</span><span data-otp-key="9">9</span><span></span><span data-otp-key="0">0</span><span data-otp-key="clear">⌫</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen hidden" id="forgot">
+        <div class="content form-page">
+          <button class="back" data-go="welcome">‹</button>
+          <div class="recovery-hero">
+            <div class="mini-brand"><span class="wallet-mark"></span> PaySathi</div>
+            <small>ACCOUNT RECOVERY</small>
+            <h2>Forgot your<br>password?</h2>
+            <p>Let’s get you back into your wallet safely.</p>
+            <i>✓</i>
+          </div>
+          <div class="recovery-card">
+            <h3>Recover access</h3>
+            <p class="sub">We’ll send a secure verification code to your registered mobile number.</p>
+            <label>Registered mobile number</label>
+            <input id="forgotMobile" class="input" value="+977 9812345678" placeholder="+977 98XXXXXXXX">
+            <button class="btn primary" data-action="forgot-password">Send verification code <span>→</span></button>
+            <strong>THREE QUICK STEPS</strong>
+            <div class="recovery-steps"><span>1<small>Verify</small></span><span>2<small>Confirm</small></span><span>3<small>Reset</small></span></div>
+            <div class="info">Your account details stay private throughout recovery.</div>
+            <button class="link forgot-login" data-go="welcome">Remembered your password?&nbsp; Log In</button>
+            <small>No code? Check your number and try again.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen hidden" id="create-pin">
+        <div class="content form-page">
+          <button class="back" data-go="otp">‹</button>
+          <h2>Create Payment PIN</h2>
+          <p class="sub">Your payment PIN helps protect transactions.</p>
+          <div class="pin-illustration">♙</div>
+          <strong class="pin-step">SECURITY SETUP · 1 OF 2</strong>
+          <label>4-digit PIN</label>
+          <div class="pin-row">
+            <input class="pin" maxlength="1" inputmode="numeric" type="password">
+            <input class="pin" maxlength="1" inputmode="numeric" type="password">
+            <input class="pin" maxlength="1" inputmode="numeric" type="password">
+            <input class="pin" maxlength="1" inputmode="numeric" type="password">
+          </div>
+          <label>Confirm PIN</label>
+          <div class="pin-row">
+            <input class="pin confirm-pin" maxlength="1" inputmode="numeric" type="password">
+            <input class="pin confirm-pin" maxlength="1" inputmode="numeric" type="password">
+            <input class="pin confirm-pin" maxlength="1" inputmode="numeric" type="password">
+            <input class="pin confirm-pin" maxlength="1" inputmode="numeric" type="password">
+          </div>
+          <button class="btn primary" data-action="create-pin">Create secure PIN <span>→</span></button>
+          <div class="pin-note"><span>♙</span><div><strong>Only you should know this code</strong><small>Avoid birthdays. Never share your payment PIN.</small></div></div>
+        </div>
+      </section>
+
+      <section class="screen hidden" id="link-bank">
+        <div class="content form-page">
+          <button class="back" data-go="create-pin">‹</button>
+          <h2>Link your bank account</h2>
+          <p class="sub">Connect a bank account to add money securely.</p>
+          <input id="bankSearch" class="input search" placeholder="⌕  Search banks">
+          <div class="bank-list">
+            <button class="bank selected" data-bank="NIC Asia Bank"><span>NA</span>NIC Asia Bank</button>
+            <button class="bank" data-bank="Nabil Bank"><span>NB</span>Nabil Bank</button>
+            <button class="bank" data-bank="Global IME Bank"><span>GI</span>Global IME Bank</button>
+            <button class="bank" data-bank="Himalayan Bank"><span>HB</span>Himalayan Bank</button>
+          </div>
+          <label>Account Number</label>
+          <input class="input" value="•••• 4821">
+          <label>Account Holder Name</label>
+          <input class="input" id="bankHolder" value="Aarav Sharma">
+          <button class="btn primary" data-action="link-bank">Link Bank Account</button>
+          <small>Your bank details are protected.</small>
+        </div>
+      </section>
+
+      <section class="screen hidden" id="bank-linked">
+        <div class="content center success-page">
+          <div class="success-circle">✓</div>
+          <h2>Bank Account Linked</h2>
+          <p class="sub">Your bank account is now linked to PaySathi.</p>
+          <div class="linked-card">
+            <strong id="linkedBankName">NIC Asia Bank</strong>
+            <span>•••• 4821</span>
+            <b>✓ Connected</b>
+          </div>
+          <button class="btn primary" data-go="home">Continue to PaySathi</button>
+        </div>
+      </section>
+
+      <!-- ================= MAIN APP ================= -->
+      <section class="screen hidden" id="home">
+        <div class="content dashboard">
+          <header class="dash-header">
+            <div><h2>Hey, <span id="userFirstName">Aarav</span></h2><p>Your money, in a better place.</p></div>
+            <div class="avatar">AS</div>
+          </header>
+
+          <div class="balance-card">
+            <span>Wallet Balance</span>
+            <strong id="balance">Rs. 4,250</strong>
+            <small>Available balance</small>
+            <button class="add-money" data-add-money>Add Money</button>
+            <div><span>Linked to <b id="dashboardBank">NIC Asia Bank</b></span><span>•••• 4821</span></div>
+          </div>
+
+          <div class="section-head"><b>Quick actions</b></div>
+          <div class="quick-grid">
+            <button class="quick" data-go="send-money"><i>↗</i><span>Send Money</span></button>
+            <button class="quick" data-go="receive-money"><i>↓</i><span>Receive</span></button>
+            <button class="quick" data-go="scan-pay"><i>▣</i><span>Scan & Pay</span></button>
+            <button class="quick" data-go="bills"><i>≡</i><span>Bills</span></button>
+          </div>
+
+          <div class="section-head"><b>Made for student life</b><button class="link" data-go="student-hub">Student Hub →</button></div>
+          <button class="shortcut" data-go="split-expense"><span>Split bills. Keep it easy.</span><small>Hostel, mess, trips & more</small></button>
+
+          <div class="section-head"><b>Upcoming</b></div>
+          <div class="upcoming"><span>Mess payment</span><small>Due tomorrow</small></div>
+          <div class="upcoming"><span>Internet</span><small>Due in 3 days</small></div>
+          <div class="section-head"><b>Recent activity</b></div>
+          <div class="recent-activity-card">
+            <span class="activity-avatar">R</span>
+            <div><b>Sent to Rahul</b><small>Today · 10:42 AM</small><p>Hostel electricity split</p></div>
+            <strong>− Rs. 500</strong>
+          </div>
+        </div>
+        <nav class="bottom-nav">
+          <button class="active" data-go="home">⌂<span>Home</span></button>
+          <button data-go="send-money">₹<span>Payments</span></button>
+          <button data-go="activity">◷<span>Activity</span></button>
+          <button data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+      <section class="screen hidden" id="activity">
+        <div class="content form-page activity-page">
+          <header class="dash-header">
+            <div><h2>Activity</h2><p>Your recent PaySathi transactions</p></div>
+            <div class="activity-mark">◷</div>
+          </header>
+          <div class="activity-summary">
+            <span>Total activity</span><strong id="activityCount">0 transactions</strong>
+          </div>
+          <div id="activityList" class="activity-list">
+            <div class="empty-activity"><span>◷</span><b>No activity yet</b><small>Your payments and wallet updates will appear here.</small></div>
+          </div>
+        </div>
+        <nav class="bottom-nav">
+          <button data-go="home">⌂<span>Home</span></button><button data-go="send-money">₹<span>Payments</span></button><button class="active" data-go="activity">◷<span>Activity</span></button><button data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+      <section class="screen hidden" id="send-money">
+        <div class="content form-page">
+          <button class="back" data-go="home">‹</button>
+          <h2>Send money</h2><p class="sub">Fast transfers, with a clear final check.</p>
+          <label>Send to</label><input id="recipientMobile" class="input" value="+977 9812345678" placeholder="+977 98XXXXXXXX">
+          <div class="recent-people">
+            <button data-recipient="+977 9812345678">Rahul</button><button data-recipient="+977 9800000001">Aaditya</button><button data-recipient="+977 9800000002">Karan</button><button data-recipient="+977 9800000003">Mom</button>
+          </div>
+          <label>Amount to send</label><input id="amount" class="input amount-input" type="number" value="500" min="1">
+          <div class="preset-amounts"><button data-preset="100">Rs. 100</button><button class="active" data-preset="500">Rs. 500</button><button data-preset="1000">Rs. 1,000</button></div>
+          <label>What's this for?</label><input id="note" class="input" value="Hostel electricity split">
+          <div class="mini-summary"><span>To <b>Rahul Sharma</b></span><span>Amount <b id="summaryAmount">Rs. 500</b></span></div>
+          <div class="mini-summary"><span>Paying from <b>PaySathi Wallet</b></span><span>Fee <b>Rs. 0</b></span></div>
+          <button class="btn primary" data-go="review" data-copy-payment>Review transfer</button>
+          <p class="helper">Security note: review recipient and amount before confirming.</p>
+        </div>
+        <nav class="bottom-nav">
+          <button data-go="home">⌂<span>Home</span></button><button class="active" data-go="send-money">₹<span>Payments</span></button><button data-go="activity">◷<span>Activity</span></button><button data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+      <section class="screen hidden" id="review">
+        <div class="content form-page">
+          <button class="back" data-go="send-money">‹</button>
+          <h2>Review Transfer</h2><p class="sub">Check the details before confirming your payment.</p>
+          <div class="review-hero"><span>Sending to</span><b>Rahul Sharma</b><strong id="reviewHeroAmount">Rs. 500</strong><small>Fee Rs. 0</small></div>
+          <div class="review-card">
+            <div><span>Recipient</span><b>Rahul Sharma</b></div>
+            <div><span>Mobile</span><b id="reviewMobile">98XXXXXXXXX</b></div>
+            <div><span>Amount</span><strong id="reviewAmount">Rs. 500</strong></div>
+            <div><span>Note</span><b id="reviewNote">Hostel expenses</b></div>
+            <div><span>Funding source</span><b>PaySathi Wallet</b></div>
+            <div><span>Transaction fee</span><b>Rs. 0</b></div>
+          </div>
+          <div class="total"><span>Total</span><strong id="totalAmount">Rs. 500</strong></div>
+          <button class="btn primary" data-go="payment-pin">Confirm & Continue</button>
+          <button class="btn secondary" data-go="send-money">Edit</button>
+          <p class="helper">Security check: You will confirm this payment with your 4-digit PIN.</p>
+        </div>
+        <nav class="bottom-nav">
+          <button data-go="home">⌂<span>Home</span></button><button class="active" data-go="send-money">₹<span>Payments</span></button><button data-go="activity">◷<span>Activity</span></button><button data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+      <section class="screen hidden" id="payment-pin">
+        <div class="content form-page">
+          <button class="back" data-go="review">‹</button>
+          <h2>Authorize payment</h2><p class="sub">Confirm securely with your payment PIN.</p>
+          <div class="payment-amount"><span>Payment amount</span><strong id="pinAmount">Rs. 500</strong><small>To Rahul Sharma</small></div>
+          <div class="pin-row payment-pin">
+            <input class="pin" maxlength="1" inputmode="numeric" type="password"><input class="pin" maxlength="1" inputmode="numeric" type="password"><input class="pin" maxlength="1" inputmode="numeric" type="password"><input class="pin" maxlength="1" inputmode="numeric" type="password">
+          </div>
+          <div class="numeric-keypad" aria-label="Payment PIN keypad">
+            <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+            <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+            <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+            <button data-key="clear">⌫</button><button data-key="0">0</button><button data-key="clear">⌫</button>
+          </div>
+          <button class="btn primary" data-action="confirm-payment">Confirm Payment</button>
+          <button class="link centered" data-demo="PIN recovery started">Forgot PIN?</button>
+          <div class="info">Never share your payment PIN with anyone.</div>
+        </div>
+        <nav class="bottom-nav">
+          <button data-go="home">⌂<span>Home</span></button><button class="active" data-go="send-money">₹<span>Payments</span></button><button data-go="activity">◷<span>Activity</span></button><button data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+      <section class="screen hidden" id="payment-success">
+        <div class="content success-page">
+          <div class="success-hero">
+            <div class="pay-logo"><b>PAY</b> Sathi <span>/ PAYMENT COMPLETE</span></div>
+            <div class="success-circle">✓</div>
+            <span class="success-label">PAYMENT COMPLETE</span><h2>Payment successful!</h2>
+            <strong class="success-amount" id="successAmount">Rs. 500</strong>
+            <small>Rahul received your money.</small>
+          </div>
+          <div class="receipt">
+            <div class="receipt-heading"><b>PAYMENT RECEIPT</b><span>✓ SUCCESS</span></div>
+            <div><span>Sent to</span><b>Rahul Sharma</b></div>
+            <div><span>Date</span><b id="receiptDate"></b></div>
+            <div><span>Reference ID</span><b>PS-84••219</b></div>
+            <div><span>From</span><b>PaySathi Wallet</b></div>
+          </div>
+          <div class="receipt-actions">
+            <button class="btn secondary" data-action="download-receipt">↓ Receipt</button>
+            <button class="btn secondary" data-action="share-payment">Share</button>
+            <button class="btn primary" data-go="home">Done →</button>
+          </div>
+          <div class="success-note"><b>☆ &nbsp; One less thing to worry about.</b><small>Your transaction is saved to Activity.</small></div>
+          <p class="helper">Keep this receipt for your records.</p>
+          <div class="success-next"><b>Split another campus expense</b><a data-go="student-hub">Open Student Hub →</a></div>
+        </div>
+        <nav class="bottom-nav">
+          <button class="active" data-go="home">⌂<span>Home</span></button><button data-go="send-money">₹<span>Payments</span></button><button data-go="activity">◷<span>Activity</span></button><button data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+      <section class="screen hidden" id="scan-pay">
+        <div class="content form-page">
+          <button class="back" data-go="home">‹</button>
+          <h2>Scan & Pay</h2><p class="sub">Pay a merchant using their QR code.</p>
+          <div class="scanner"><div class="scan-corners"></div><div class="scan-line"></div></div>
+          <div class="scan-actions">
+            <button class="btn secondary" data-demo="Flashlight is not available in browser preview">✦ &nbsp; Flashlight</button>
+            <label class="btn primary upload-button" for="qrUpload">⌗ &nbsp; Upload QR</label>
+            <input id="qrUpload" class="hidden" type="file" accept="image/png,image/jpeg,image/webp">
+          </div>
+          <div class="qr-detail"><span class="qr-code">▦</span><div><b>Let friends scan to pay you</b><small>Receive without sharing your number.</small><a data-demo="Your QR opened">Show my QR →</a></div></div>
+          <div class="merchant-card"><b>Campus Cafe</b><small>Last paid Rs. 180 · QR payment</small><button data-demo="Scan again started">Scan again</button></div>
+        </div>
+        <nav class="bottom-nav">
+          <button data-go="home">⌂<span>Home</span></button><button class="active" data-go="send-money">₹<span>Payments</span></button><button data-go="activity">◷<span>Activity</span></button><button data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+      <section class="screen hidden" id="bills">
+        <div class="content form-page">
+          <button class="back" data-go="home">‹</button>
+          <h2>Pay bills</h2><p class="sub">Everything due, in one easy place.</p>
+          <input id="billSearch" class="input search" placeholder="⌕  Search electricity, internet, fees...">
+          <div class="bill-quick"><b>QUICK ACCESS</b><div><button>⚡<span>Electricity</span></button><button>⌁<span>Internet</span></button><button>▣<span>College fees</span></button><button>▯<span>Mobile</span></button></div></div>
+          <div class="section-head"><b>Utilities &amp; home</b></div>
+          <button class="service"><i>↗</i><span><b>Electricity</b><small>NEA · Household bill</small></span></button>
+          <button class="service"><i>●</i><span><b>Water</b><small>KUKL · Utility bill</small></span></button>
+          <button class="service"><i>◎</i><span><b>Internet</b><small>WorldLink · Shared plan</small></span></button>
+          <div class="section-head"><b>Campus &amp; communication</b></div>
+          <button class="service selected" data-demo="College fees selected"><i>←</i><span><b>College Fees</b><small>Pay college fees</small></span></button>
+          <div class="bill-attention"><span>Needs your attention</span><b>WorldLink Internet</b><small>Due tomorrow <strong>Rs. 1,250</strong></small><button class="btn primary" data-demo="Bill review opened">Pay now →</button></div>
+          <div class="bill-note"><b>Stay ahead of due dates</b><small>Save your regular bills and avoid last-minute stress.</small></div>
+        </div>
+        <nav class="bottom-nav">
+          <button data-go="home">⌂<span>Home</span></button><button class="active" data-go="send-money">₹<span>Payments</span></button><button data-go="activity">◷<span>Activity</span></button><button data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+      <section class="screen hidden" id="recharge">
+        <div class="content form-page">
+          <button class="back" data-go="home">‹</button>
+          <h2>Mobile recharge</h2><p class="sub">NTC or Ncell in a few taps.</p>
+          <div class="operator"><button class="active">NTC</button><button>Ncell</button></div>
+          <label>Mobile Number</label><input id="rechargeMobile" class="input" value="9812345678">
+          <div class="recent-numbers"><button data-recharge-number="9812345678">98•••412 · NTC</button><button data-recharge-number="9800000830">98•••830 · Ncell</button><button data-recharge-number="9811111111">Mom · NTC</button></div>
+          <label>Recharge amount</label>
+          <div class="amount-grid">
+            <button data-recharge="100">Rs. 100</button><button class="active" data-recharge="200">Rs. 200</button><button data-recharge="500">Rs. 500</button><button data-recharge="1000">Rs. 1,000</button>
+          </div>
+          <div class="bonus-pack"><b>⚡ &nbsp; Bonus data pack</b><small>1.5 GB data · 7 days</small><span>Included</span></div>
+          <div class="recharge-wallet"><b>▣ &nbsp; PaySathi Wallet</b><small>Balance Rs. 4,250</small><span>Fee Rs. 0</span></div>
+          <div class="mini-summary"><span>Operator <b>NTC</b></span><span>Amount <b id="rechargeAmount">Rs. 200</b></span></div>
+          <button class="btn primary" data-action="recharge">Recharge Rs. 200</button>
+          <div class="prototype-note">Demo recharge only — no operator payment is made.</div>
+        </div>
+        <nav class="bottom-nav">
+          <button data-go="home">⌂<span>Home</span></button><button class="active" data-go="send-money">₹<span>Payments</span></button><button data-go="activity">◷<span>Activity</span></button><button data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+      <!-- ================= STUDENT ================= -->
+      <section class="screen hidden" id="student-hub">
+        <div class="content form-page">
+          <div class="hub-hero">
+            <h2>Student Hub</h2>
+            <p class="sub">Campus money, minus the awkward bits.</p>
+            <span class="student-badge">✦ BUILT FOR STUDENT LIFE</span>
+            <img src="/src/assets/wireframe/campus-hero.jpg" alt="Students on campus">
+            <strong>Spend together.<br>Stay in control.</strong>
+            <span class="settled">✓ &nbsp; 3 of 4 friends settled</span>
+          </div>
+          <div class="section-head"><b>Your student toolkit</b><small>Simple tools for shared campus life</small></div>
+          <div class="student-grid">
+            <button class="student-card split" data-go="split-expense"><i>◈</i><b>Split expenses</b><small>Hostel & mess bills</small></button>
+            <button class="student-card request" data-demo="Request Money opened"><i>▣</i><b>Request money</b><small>No awkward reminders</small></button>
+            <button class="student-card campus" data-demo="Campus Pay selected"><i>▥</i><b>Campus pay</b><small>Fees & cafeteria</small></button>
+            <button class="student-card budget" data-go="student-budget"><i>⌁</i><b>Student budget</b><small>See where it goes</small></button>
+          </div>
+          <div class="section-head coming"><b>Coming up</b><a data-demo="Viewing all upcoming payments">VIEW ALL →</a></div>
+          <div class="upcoming"><i>▣</i><div><b>Mess contribution</b><small>Due tomorrow</small></div><strong>Rs. 1,800</strong></div>
+          <div class="reminder"><b>ONE THING TO WRAP UP</b><strong>Aaditya still owes Rs. 300</strong><small>Send a kind reminder</small><a data-demo="Reminder sent to Aaditya">Remind →</a></div>
+        </div>
+        <nav class="bottom-nav">
+          <button data-go="home">⌂<span>Home</span></button><button data-go="send-money">₹<span>Pay</span></button><button class="active" data-go="student-hub">♙<span>Campus</span></button><button data-go="student-budget">⌁<span>Budget</span></button>
+        </nav>
+      </section>
+
+      <section class="screen hidden" id="split-expense">
+        <div class="content form-page">
+          <button class="back" data-go="student-hub">‹</button>
+          <h2>Split an expense</h2><p class="sub">Share a cost fairly, without the awkward math.</p>
+          <div class="expense-card"><b>Hostel Electricity</b><span>Total • 4 people</span><strong>Rs. 1,200</strong></div>
+          <div class="section-head"><b>Split between</b></div>
+          <div class="person"><span>Aarav</span><b>Rs. 300 ✓</b></div>
+          <div class="person"><span>Rahul</span><b>Rs. 300 ✓</b></div>
+          <div class="person pending"><span>Aditya</span><b>Rs. 300 · Pending</b></div>
+          <div class="person"><span>Karan</span><b>Rs. 300 ✓</b></div>
+          <div class="per-person"><span>Per person</span><b>Rs. 300</b></div>
+          <div class="section-head"><b>Status</b></div>
+          <p class="sub">Settlement progress: <b>3 of 4 paid</b></p>
+          <button class="btn primary" data-demo="Reminder sent to Aditya">Send Reminders</button>
+          <button class="btn secondary" data-demo="New split created">Create New Split</button>
+        </div>
+        <nav class="bottom-nav">
+          <button data-go="home">⌂<span>Home</span></button><button data-go="send-money">₹<span>Payments</span></button><button data-go="activity">◷<span>Activity</span></button><button class="active" data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+      <section class="screen hidden" id="student-budget">
+        <div class="content form-page">
+          <button class="back" data-go="student-hub">‹</button>
+          <h2>Student budget</h2><p class="sub">Your monthly plan, at a glance.</p>
+          <label class="month-select budget-month"><span>▣</span> October 2026 <select aria-label="Budget month"><option>October 2026</option><option>September 2026</option><option>August 2026</option></select></label>
+          <div class="budget-card">
+            <span class="budget-caption">MONTHLY BUDGET</span>
+            <b class="budget-total">Rs. 8,000</b>
+            <small>Planned for October</small>
+            <div class="budget-top"><div><span>SPENT</span><b>Rs. 4,250</b></div><div><span>LEFT</span><b>Rs. 3,750</b></div></div>
+          </div>
+          <div class="section-head"><b>Where your money goes</b><small>Share of spending</small></div>
+          <div class="category food"><div><span>Food &amp; mess</span><b>Rs. 2,100</b></div><i><em style="width:49.4%"></em></i></div>
+          <div class="category transport"><div><span>Transport</span><b>Rs. 850</b></div><i><em style="width:20%"></em></i></div>
+          <div class="category mobile"><div><span>Mobile &amp; data</span><b>Rs. 300</b></div><i><em style="width:7.1%"></em></i></div>
+          <div class="category other"><div><span>Other</span><b>Rs. 1,000</b></div><i><em style="width:23.5%"></em></i></div>
+          <div class="budget-message"><b>You've got Rs. 3,750 left.</b><p>Keep some room for the unexpected.</p></div>
+          <div class="budget-transaction"><small>LAST TRANSACTION</small><b>Campus cafeteria</b><span>Today · Food &amp; mess</span><strong>- Rs. 240</strong></div>
+        </div>
+        <nav class="bottom-nav">
+          <button data-go="home">⌂<span>Home</span></button><button data-go="send-money">₹<span>Payments</span></button><button data-go="activity">◷<span>Activity</span></button><button class="active" data-go="student-hub">♙<span>Profile</span></button>
+        </nav>
+      </section>
+
+    </div>
+  </div>
+
+  <div id="toast"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
